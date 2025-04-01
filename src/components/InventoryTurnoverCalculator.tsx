@@ -374,7 +374,11 @@ const InventoryTurnoverCalculator: React.FC = () => {
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" />
                     <YAxis />
-                    <RechartTooltip formatter={(value) => [`${value.toFixed(2)} times`, 'Turnover Ratio']} />
+                    <RechartTooltip 
+                      formatter={(value: any) => {
+                        return [`${Number(value).toFixed(2)} times`, 'Turnover Ratio'];
+                      }} 
+                    />
                     <Legend />
                     <Bar dataKey="value" name="Turnover Ratio" fill="#245e4f" radius={[4, 4, 0, 0]} />
                     <ReferenceLine y={3.8} stroke="#e9c46a" strokeDasharray="3 3" />
@@ -394,7 +398,11 @@ const InventoryTurnoverCalculator: React.FC = () => {
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" />
                     <YAxis />
-                    <RechartTooltip formatter={(value) => [`${value.toFixed(2)} times`, 'Turnover Ratio']} />
+                    <RechartTooltip 
+                      formatter={(value: any) => {
+                        return [`${Number(value).toFixed(2)} times`, 'Turnover Ratio'];
+                      }}
+                    />
                     <Legend />
                     <Bar dataKey="value" name="Turnover Ratio" fill="#7ac9a7" radius={[4, 4, 0, 0]} />
                     <ReferenceLine y={turnoverRatio} stroke="#e9c46a" strokeDasharray="3 3" label="Your Ratio" />
